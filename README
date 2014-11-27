@@ -1,0 +1,46 @@
+iii README
+
+This assignment is submitted by Mingzhe Li and Mengtian Li
+
+Acknowledges: 
+We would like to express our greatest appreciation for the help from
+Professor Noah Mendelsohn and TAs who helped us, who are Alex, Jacob, 
+Thomas, Eric, and Margaret.  We were also inspired by student-generated
+information on Piazza.
+
+sudoku:
+        We decided to utilize a 2D array to hold the data of the sudoku 
+        read in from the file.  We made such decision because it would
+        be easier and convenient to use the _row_major() and 
+        _col_major() mapping functions.
+
+        We implemented an array of slots in the checking functions to 
+        help achieve our goal.  This array will have 10 slots, among which
+        slots[0] will be an "all_set" indicator, and each of the rest
+        flags whether the number has appeared before.  E.g. if number
+        9 has appeared in that row/col/sub, slots[9] gets 1, otherwise 0.
+        So if any number that appeared twice, the program will know by looking
+        at the slots.
+        
+        The limitation on the width and height of the sudoku is strictly 
+        enforced, that it must be a 9*9, with the maximum valiue of 9. 
+        Each element must be within the range of 1 to 9. 
+
+        In a valid sudoku, each col, row and 3*3 sub-part contains 
+        no same number. 
+        
+unblackedges:
+        We implemented a Bit2_T to hold the input pbm image. Each pixel is 
+        either zero or one, which represents white or black respectively.
+
+        We used a 2D bitmap to represent the input image. A bitmap called 
+        "visited" to represent the blackedges that has been removed. A stack
+        called "fringe" that contains black edges to perform DFS search to 
+        remove blackedges. One important variant is that each bit must be 0 
+        after we put it in the "visited" bitmap (and the corresponding bit in 
+        the "visited" bitmap must be 1). Another thing is that every bit in
+        the "fringe" must be 1 (beacuse the bit is considered as a black edge).
+
+
+
+working hours: 50+
